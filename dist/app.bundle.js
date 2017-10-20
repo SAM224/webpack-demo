@@ -105,10 +105,7 @@ function component() {
   
   var element = document.createElement('div');
   var btn = document.createElement('button');
-
   
-  
-
   // Lodash, now imported by this script
   element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello', 'webpack'], ' ');
   element.classList.add('hello');
