@@ -1,4 +1,11 @@
+@font-face {
+  font-family: 'Anton';
+  src:  url('./Anton-Regular.woff') format('woff');
+}
+
 .hello {
-    color: red;
+    color: rgb(56, 54, 54);
+    font-family: 'Anton';
+    font-size: 40px;
     background: url('./icon.svg');
   }

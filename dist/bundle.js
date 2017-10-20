@@ -17264,7 +17264,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(8)(content, options);
+var update = __webpack_require__(9)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -17289,7 +17289,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".hello {\r\n    color: red;\r\n    background: url(" + __webpack_require__(0) + ");\r\n  }", ""]);
+exports.push([module.i, "@font-face {\r\n  font-family: 'Anton';\r\n  src:  url(" + __webpack_require__(8) + ") format('woff');\r\n}\r\n\r\n.hello {\r\n    color: rgb(56, 54, 54);\r\n    font-family: 'Anton';\r\n    font-size: 40px;\r\n    background: url(" + __webpack_require__(0) + ");\r\n  }", ""]);
 
 // exports
 
@@ -17380,6 +17380,12 @@ function toComment(sourceMap) {
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "ba785c7c097d8e7d859e58f43646f766.woff";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -17433,7 +17439,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(9);
+var	fixUrls = __webpack_require__(10);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -17749,7 +17755,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 
