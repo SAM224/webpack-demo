@@ -12,9 +12,6 @@ module.exports = merge(common, {
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
             }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common' // Specify the common bundle's name.
         })
     ]
 });

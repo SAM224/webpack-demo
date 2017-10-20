@@ -5,8 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         app: './src/index.js',
-        print: './src/print.js',
-        another: './src/another-module.js'
+        print: './src/print.js'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),

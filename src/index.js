@@ -1,34 +1,36 @@
-import _ from 'lodash';
 import './style.css';
 import Icon from './icon.svg';
 import Data from './data.xml';
 import printMe from './print.js';
 
-function component() {
+function getComponent() {
 
-  var element = document.createElement('div');
-  var btn = document.createElement('button');
+  return import ( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+    var element = document.createElement('div');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
+    var btn = document.createElement('button');
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = printMe;
+    element.appendChild(btn);
 
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('Looks like we are in development mode!');
-  }
+    // Add the image to our existing div.
+    var myIcon = new Image();
+    myIcon.src = Icon;
+    element.appendChild(myIcon);
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+    console.log(Data);
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-  element.appendChild(btn);
-  // Add the image to our existing div.
-  var myIcon = new Image();
-  myIcon.src = Icon;
-  element.appendChild(myIcon);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Looks like we are in development mode!');
+    }
 
-  console.log(Data);
+    return element;
 
-  return element;
+  }).catch(error => 'An error occurred while loading the component');
+
 }
 
-document.body.appendChild(component());
+getComponent().then(component => {
+   document.body.appendChild(component);
+ })
