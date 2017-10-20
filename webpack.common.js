@@ -5,12 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         app: './src/index.js',
-        print: './src/print.js'
+        print: './src/print.js',
+        another: './src/another-module.js'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Production'
+            title: 'Code Splitting'
         })
     ],
     output: {
