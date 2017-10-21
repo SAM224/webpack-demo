@@ -31,10 +31,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: require.resolve('index.js'),
                 use: 'imports-loader?this=>window'
+            },
+            {
+                test: require.resolve('globals.js'),
+                use: 'exports-loader?file,parse=helpers.parse'
             },
             {
                 test: /\.css$/,
