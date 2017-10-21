@@ -1,14 +1,13 @@
 import './style.css';
 import Icon from './icon.svg';
 import Data from './data.xml';
-import _ from 'lodash';
 
 function component() {
   var btn = document.createElement('button');
   var element = document.createElement('div');
   var br = document.createElement('br');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = join(['Hello', 'webpack'], ' ');
   btn.innerHTML = 'Click me and check the console!';
   
   element.appendChild(br);

@@ -21,6 +21,9 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'runtime'
+        }),
+        new webpack.ProvidePlugin({
+            join: ['lodash', 'join']
         })
     ],
     output: {
